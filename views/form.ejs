@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Message</title>
+  </head>
+  <body>
+    <nav><a href="/">Home Page</a></nav>
+    <main>
+      <h2>New Message</h2>
+      <form action="/new" method="post">
+        <div>
+          <label for="authorName">Name:</label>
+          <input type="text" id="authorName" name="authorName" required />
+        </div>
+        <div>
+          <label for="authorMessage">Message:</label>
+          <textarea name="authorMessage" id="authorMessage" required></textarea>
+        </div>
+        <button type="submit">Add Message</button>
+      </form>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odin Message Board</title>
+  </head>
+  <body>
+    <main>
+        <ul>
+            <% locals.messages.forEach( ( message ) => { %>
+                <li>
+                    <div>
+                        <span class="messsage-user">@<%= message.user %></span>
+                        <span>&bull;</span>
+                        <span class="messsage-date"><%= message.added.toLocaleDateString() %> <%= message.added.getHours() %>:<%= message.added.getMinutes() %>:<%= message.added.getSeconds() %></span>
+                        <span><a href="/message/<%= message.id %>">open</a></span>
+                    </div>
+                    <p class="message-text"><%= message.text %></p>
+                </li>
+            <% }); %>
+        </ul>
+        <a href="/new"><button>Join the conversation</button></a>
+    </main>
+  </body>
+</html>
