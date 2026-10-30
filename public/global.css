@@ -1,0 +1,264 @@
+/* reset */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+*:not(dialog) {
+    margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        interpolate-size: allow-keywords;
+    }
+}
+
+body {
+    /* 4. Increase line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* 9. Improve line wrapping */
+p {
+    text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+    isolation: isolate;
+}
+
+/* variables */
+:root {
+    --fs-1: 1rem;
+    --fs-2: 1.333rem;
+    --fs-3: 1.777rem;
+    --fs-4: 2.369rem;
+    --fs-5: 3.157rem;
+    --fs-small: 0.75rem;
+
+    --clr-bg-main: rgb(11, 20, 22);
+    --clr-a: rgb(79, 79, 183);
+    --clr-a-hover: rgb(135, 135, 255);
+    --clr-font: rgb(159, 159, 159);
+    --clr-user: rgb(255, 255, 255);
+    --clr-date: grey;
+    --clr-btn: rgb(59, 19, 19);
+    --clr-btn-hover: rgb(87, 44, 44);
+    --clr-input: rgb(216, 216, 216);
+}
+
+@media (min-width: 960px) {
+    :root {
+        --fs-1: 1rem;
+        --fs-2: 1.618rem;
+        --fs-3: 2.618rem;
+        --fs-4: 4.236rem;
+        --fs-5: 6.854rem;
+        --fs-small: 0.618rem;
+    }
+}
+
+/* typography */
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('./fonts/RobotoCondensed-Medium.woff') format('woff2'),
+        url('./fonts/RobotoCondensed-Medium.woff2') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Roboto Condensed', system-ui, sans-serif;
+}
+
+/* base styles*/
+body {
+    background: var(--clr-bg-main);
+    color: var(--clr-font);
+
+}
+
+main {
+    margin: 0 auto;
+    max-width: 600px;
+    padding-top: var(--fs-3);
+}
+
+ul,
+.form-wrapper,
+.message-wrapper {
+    margin-left: var(--fs-2);
+    margin-right: var(--fs-2);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+li {
+    margin-top: var(--fs-2);
+    margin-bottom: var(--fs-2);
+}
+
+.message-user {
+    color: var(--clr-user);
+}
+
+.message-date {
+    color: var(--clr-date);
+    font-size: small;
+}
+
+.message-text {
+    margin-left: var(--fs-2);
+}
+
+a {
+    color: var(--clr-a)
+}
+
+a:hover {
+    color: var(--clr-a-hover);
+    cursor: pointer;
+}
+
+.join-btn {
+    cursor: pointer;
+}
+
+.main-index,
+nav {
+    text-align: center;
+}
+
+.message-n-page {
+    margin-top: var(--fs-2);
+}
+
+.form-wrapper {
+    margin-top: var(--fs-2);
+}
+
+.form-wrapper>h2 {
+    margin-bottom: var(--fs-3);
+}
+
+.author-name-wrapper,
+.author-message-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-name-wrapper>input,
+.author-message-wrapper>textarea {
+    max-width: 100%;
+    background-color: inherit;
+    border: 1px solid var(--clr-input);
+    border-radius: 5px;
+    margin-bottom: var(--fs-2);
+}
+
+label {
+    margin-bottom: var(--fs-small);
+}
+
+.author-message-wrapper>textarea {
+    min-height: 30vh;
+    margin-bottom: var(--fs-3);
+}
+
+.submit-message-btn {
+    cursor: pointer;
+    background-color: var(--clr-btn);
+    border-radius: 5px;
+    color: var(--clr-font);
+    border: 1px solid var(--clr-date);
+    padding-left: var(--fs-2);
+    padding-right: var(--fs-2);
+}
+
+.submit-message-btn:hover {
+    background-color: var(--clr-btn-hover);
+}
+
+textarea,
+input {
+    color: var(--clr-font);
+    padding-left: var(--fs-1);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* media queries */
+
+@media (min-width: 960px) {
+    main {
+        grid-column: 2/3;
+    }
+
+    .author-name-wrapper>input,
+    .author-message-wrapper>textarea {
+        max-width: 90%;
+    }
+
+    ul,
+    .form-wrapper,
+    .message-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
