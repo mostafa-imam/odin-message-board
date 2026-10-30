@@ -2,7 +2,9 @@ const { messages } = require('../db.js');
 const crypto = require('node:crypto');
 
 async function getIndexPage(req, res) {
-    res.render('index', { messages: messages });
+    const clone = structuredClone(messages);
+    const reverseMessages = clone.reverse();
+    res.render('index', { messages: reverseMessages });
 }
 
 async function getNewMessage(req, res) {
