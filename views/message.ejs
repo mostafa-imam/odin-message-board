@@ -3,21 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/global.css" />
     <title>Message</title>
   </head>
   <body>
     <main>
-      <div>
-        <span class="message-user">@<%= locals.message.user %></span>
-        <span>&bull;</span>
-        <span class="messsage-date">
-          <%= locals.message.added.toLocaleDateString() %> <%=
-          locals.message.added.getHours() %>:<%=
-          locals.message.added.getMinutes() %>:<%=
-          locals.message.added.getSeconds() %>
-        </span>
+      <nav><a href="/">Home Page</a></nav>
+
+      <div class="message-wrapper">
+        <div class="message-n-page">
+          <span class="message-user">@<%= locals.message.user %></span>
+          <span>&bull;</span>
+          <span class="message-date">
+            <%= locals.message.added.toLocaleDateString() %> <%=
+            locals.message.added.getHours() %>:<%=
+            locals.message.added.getMinutes() %>:<%=
+            locals.message.added.getSeconds() %>
+          </span>
+        </div>
+        <p class="message-text"><%= locals.message.text %></p>
       </div>
-      <p class="message-text"><%= locals.message.text %></p>
     </main>
   </body>
 </html>

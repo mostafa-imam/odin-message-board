@@ -3,23 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/global.css" />
     <title>New Message</title>
   </head>
   <body>
-    <nav><a href="/">Home Page</a></nav>
     <main>
-      <h2>New Message</h2>
-      <form action="/new" method="post">
-        <div>
-          <label for="authorName">Name:</label>
-          <input type="text" id="authorName" name="authorName" required />
-        </div>
-        <div>
-          <label for="authorMessage">Message:</label>
-          <textarea name="authorMessage" id="authorMessage" required></textarea>
-        </div>
-        <button type="submit">Add Message</button>
-      </form>
+      <nav><a href="/">Home Page</a></nav>
+      <div class="form-wrapper">
+        <h2>New Message</h2>
+        <form action="/new" method="post">
+          <div class="author-name-wrapper">
+            <label for="authorName">Name:</label>
+            <input type="text" id="authorName" name="authorName" required />
+          </div>
+          <div class="author-message-wrapper">
+            <label for="authorMessage">Message:</label>
+            <textarea
+              name="authorMessage"
+              id="authorMessage"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="submit-message-btn">Add Message</button>
+        </form>
+      </div>
     </main>
   </body>
 </html>
