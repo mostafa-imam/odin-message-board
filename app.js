@@ -4,7 +4,7 @@ const { indexRouter } = require('./routes/indexRouter.js')
 
 const app = express();
 const PORT = 3000;
-const hostname = '127.0.0.1';
+const hostname = '0.0.0.0';
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
